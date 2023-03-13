@@ -82,8 +82,8 @@ try {
                    $auditLog = @{
                     Action            = 'RevokeMembership'
                     System            = 'AzureActiveDirectory'
-                    TargetIdentifier  = "GroupId [$($group.id)]"
-                    TargetDisplayName = "User UPN [$formObject.userPrincipalName]"
+                    TargetIdentifier  = "$($azureADUser.id)"
+                    TargetDisplayName = "$($formObject.userPrincipalName)"
                     Message           = "AzureActiveDirectory action: [AccountRevokeGroupMembership to group [$($group.Name)($($group.id))] ] for: [$($formObject.userPrincipalName)] executed successfully. Note that the account was not a member"
                     IsError           = $false
                 }
